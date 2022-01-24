@@ -20,8 +20,5 @@ func (c *Client) IncUserBalance(ctx context.Context, userId string, balanceChang
 	}
 	var updatedBalance *db.UserBalance
 	err := result.Decode(&updatedBalance)
-	if err != nil {
-		return nil, err
-	}
-	return updatedBalance, nil
+	return updatedBalance, err
 }
